@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/allCss.min.css?rev=211e2dacd2947c8d1d3f0980575408f8">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Rock+Salt|PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="gooey-transition">
 <!-- begin wrap -->
@@ -26,7 +27,7 @@
             <li class="work_list_item">Knowledge of graphics packages like Photoshop</li>
             <li class="work_list_item">Development for cross-browser and cross-platform compatibility</li>
             <li class="work_list_item">Development for responsive / adaptive, Pixel  Perfect  , retina-type devices,
-valid, semantic HTML</li>
+                valid, semantic HTML</li>
             <li class="work_list_item">BEM methodology layout</li>
             <li class="work_list_item">Knowledge of JavaScript(ES5 и ES6), jQuery, ajax, json</li>
             <li class="work_list_item">Ability to troubleshoot memory leaks</li>
@@ -50,9 +51,12 @@ valid, semantic HTML</li>
     <div class="bg-layer"></div>
 </div> <!-- .cd-transition-layer -->
         <!-- begin header -->
-        <header class="header">
+        <header class="header header__mod-on">
             <div class="header_wrap">
-                <a  href="/">
+                <div class="close close-btn-top">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </div>
+                <a class="link-label" href="/">
                     <img class="label" src="img/900-2-blue.png" alt=""></a>
                 <!-- begin Top menu -->
                 <ul class="top-menu pink">
@@ -69,6 +73,9 @@ valid, semantic HTML</li>
                         <a class="top-menu_item" href=".contacts">CONTACTS</a>
                     </li>
                 </ul>
+                <div class="close close-btn">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </div>
             </div>
             <!-- end Top menu --> </header>
         <!-- end header -->
@@ -276,21 +283,46 @@ valid, semantic HTML</li>
             me
         </h2>
         <div class="network">
-            <a href="https://www.linkedin.com/in/%D0%B3%D0%BB%D0%B5%D0%B1-%D1%89%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D1%8C-91a109120" target="_blank" class="network_link in" style="margin-left: 0px;" title="LinkedIn profile"> <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <a href="https://www.linkedin.com/in/%D0%B3%D0%BB%D0%B5%D0%B1-%D1%89%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D1%8C-91a109120" target="_blank" class="network_link in" style="margin-left: 0px;" title="LinkedIn profile"> <i class="fa fa_in" aria-hidden="true"></i>
             </a>
-            <a href="skype:mp_gleb" class="network_link sk" style="margin-left: 0px;" title="Skype"> <i class="fa fa-skype" aria-hidden="true"></i>
+            <a href="skype:mp_gleb" class="network_link sk" style="margin-left: 0px;" title="Skype"> <i class="fa fa_sk" aria-hidden="true"></i>
             </a>
             <a href="mailto:posijuur@gmail.com" class="network_link em" style="margin-left: 0px;" title="Email">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <i class="fa fa_em" aria-hidden="true"></i>
             </a>
             <a href="docs/Scherban_Gleb_Alexandrovich.pdf" target="_blank" class="network_link cv" style="margin-left: 0px;" title="CV">
-                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                <i class="fa fa_cv" aria-hidden="true"></i>
             </a>
             <a href="https://www.facebook.com/profile.php?id=100005782399050" target="_blank" class="network_link fb" style="margin-left: 0px;" title="Twitter">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa_fb" aria-hidden="true"></i>
             </a>
-            
-            
+            <form class="form" autocomplete="off">
+                <div class="form_base">
+                    <h3 class="form_title">write me something</h3>
+
+                    <div class="ln">
+                        <label for="nameFieldInput" id="nameFieldLabel">Name</label>
+                        <input class="form_name" name="name" type="text" placeholder="Name" id="nameFieldInput" />
+                        <div class="err"></div>
+                    </div>
+                    <div class="ln">
+                        <label for="emailFieldInput" id="emailFieldLabel">Email</label>
+                        <input class="form_email" name="email" type="text" placeholder="Email" id="emailFieldInput" />
+                        <div class="err"></div>
+                    </div>
+                    <div class="ln">
+                        <label for="messageFieldTextarea" id="messageFieldLabel">Message</label>
+                        <textarea class="form_message" name="message" type="text" placeholder="Message" id="messageFieldTextarea"></textarea>
+                        <div class="err"></div>
+                    </div>
+                    <input class="form_send" type="submit" id="formSubmitButton" value="Send" />
+                </div>
+                <div class="success-block">
+                    <div class="success-block_wrap"> <em class="success-block_em">Thank you!</em>
+                        <span class="success-block_span">We'll be in touch</span>
+                    </div>
+                </div>
+            </form>
 
         </div>
     </div>
