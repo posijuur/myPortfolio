@@ -328,6 +328,15 @@
             <div class="portfolio_list">
                 
             </div>
+
+            <h2 class="portfolio_title">
+                Github source
+                <small>click to view the code</small>
+            </h2>
+            <div class="portfolio_git">
+                
+            </div>
+
         </div>
     </section>
     <!-- end portfolio -->
@@ -427,7 +436,30 @@
                 </a>
             </article>
         <% }; %>
-        
+    </script>
+
+    <script type="text/tmpl" id='js-src'>
+        <% for(i = 0; i < img.length; i++) { %> 
+            <article class="portfolio_descr">
+                <a href="<%- img[i].link %>" class="portfolio_link" target="_blank">
+                    <div class="portfolio_info">
+                        <div class="portfolio_sub_info">
+                            <div class="portfolio_sub_info2">
+                                <h3 class="portfolio_sub_info_title"><%- img[i].title %></h3>
+                                <ul class="portfolio_sub_info_list">
+                                    <% for(j = 0; j < img[i].skills.length; j++) { %>
+                                        <li class="portfolio_sub_info_item"><%- img[i].skills[j].name %><li>
+                                    <% }; %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="portfolio_figure">
+                        <img class="portfolio_figure_img" src="<%- img[i].picture %>" />
+                    </figure>
+                </a>
+            </article>
+        <% }; %>
     </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
