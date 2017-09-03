@@ -9,7 +9,7 @@
     <title>Portfolio</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/allCss.min.css?rev=6c7e2559d786e7b46c11706da5d73610">
+    <link rel="stylesheet" href="css/allCss.min.css?rev=c06c2e98af86b833e9fa8c8adf95e7a3">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Rock+Salt|PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -32,12 +32,14 @@
             <li class="work_list_item">Knowledge of JavaScript(ES5 и ES6), jQuery, ajax, json</li>
             <li class="work_list_item">Ability to troubleshoot memory leaks</li>
             <li class="work_list_item">Knowledge of libraries Lodash and Sugar</li>
-            <li class="work_list_item">The templating engine Lodash, Handlebars</li>
-            <li class="work_list_item">Build systems Gulp и Grunt</li>
-            <li class="work_list_item">Experience with version control systems Git</li>
+            <li class="work_list_item">The templating engine Lodash, Twig</li>
+            <li class="work_list_item">Build systems Gulp, Webpack 2</li>
+            <li class="work_list_item">Experience with version control systems Git, SVN</li>
             <li class="work_list_item">Experience with CSS preprocessors (Sass)</li>
             <li class="work_list_item">Knowledge of NPM and Bower</li>
             <li class="work_list_item">Experience working with React.js</li>
+            <li class="work_list_item">Experience working with Canvas</li>
+            <li class="work_list_item">Have basic knowledge of PHP, Node.js</li>
            <!--  <li class="work_list_item">Experience working with Node.js</li>
             <li class="work_list_item">Knowledge of the Express framework, module restify (REST API)</li>
             <li class="work_list_item">Knowledge of the middleware PassportJS</li>
@@ -91,7 +93,7 @@
                     <span class="g_go">Gleb</span>
                     <span class="g_ca">Scherban</span>
                     <span class="g_an">and I'm a</span>
-                    <span class="g_24">26</span>
+                    <span class="g_24">27</span>
                     <span class="g_ye">year old Ukrainian</span>
                     <span class="g_fr">Front End Developer</span>
                     <span class="g_ni">Nice to meet you!</span>
@@ -161,9 +163,9 @@
                                 <img src="" alt=""></div>
                             <figcaption class="tehnology-title">React</figcaption>
                         </figure>
-                        <span class="list-item_title">React</span>
+                        <span class="list-item_title">React/Redux</span>
                         <ul class="skills-descr">
-                            <li class="skills-descr_item">Little experience with framework</li>
+                            <li class="skills-descr_item">Experience with framework/Redux</li>
                         </ul>
                     </li>
                     <li class="list-item">
@@ -250,11 +252,11 @@
                     <figure class="technology">
                         <div class="media-container media-container__mod9">
                             <img src="" alt=""></div>
-                        <figcaption class="tehnology-title">GULP/GUNT/WEBPACK</figcaption>
+                        <figcaption class="tehnology-title">GULP/GUNT/WEBPACK 2</figcaption>
                     </figure>
                     <span class="list-item_title">Collectors</span>
                     <ul class="skills-descr">
-                            <li class="skills-descr_item">GULP/GUNT/WEBPACK</li>
+                            <li class="skills-descr_item">GULP/GUNT/WEBPACK 2</li>
                         </ul>
                 </li>
                 <li class="list-item">
@@ -276,8 +278,26 @@
         </h2>
         <div class="work_wrap">
             <article class="work_article">
+                <span class="work_label">w</span>
+                <p class="work_years">2017 - now</p>
+                <div class="work_line">
+                    <span class="work_circle"></span>
+                </div>
+                <h3 class="work_title3">
+                    Front End Developer/ support for old projects, creating new sites, editing code, working with php and javascript code, work with highly loaded projects
+                </h3>
+                <h4 class="work_title4">SpecialGroupCode</h4>
+                <ul class="work_list">
+                    <li class="work_list_item">Support for old projects</li>
+                    <li class="work_list_item">Creating new sites</li>
+                    <li class="work_list_item">Editing code</li>
+                    <li class="work_list_item">Working with php and javascript code</li>
+                    <li class="work_list_item">Work with highly loaded projects</li>
+                </ul>
+            </article>
+            <article class="work_article">
                 <span class="work_label">f</span>
-                <p class="work_years">2016 - now</p>
+                <p class="work_years">2016 - 2017</p>
                 <div class="work_line">
                     <span class="work_circle"></span>
                 </div>
@@ -321,21 +341,23 @@
     <!-- begin portfolio -->
     <section class="portfolio">
         <div class="portfolio_wrap">
-            <h2 class="portfolio_title">
-                Portfolio
+        	<h2 class="portfolio_title">
+                Work portfolio
                 <small>click to view the site</small>
             </h2>
-            <div class="portfolio_list">
-                
-            </div>
+            <div class="portfolio_work"></div>
+
+            <h2 class="portfolio_title">
+                Portfolio freelance
+                <small>click to view the site</small>
+            </h2>
+            <div class="portfolio_list"></div>
 
             <h2 class="portfolio_title">
                 Github source
                 <small>click to view the code</small>
             </h2>
-            <div class="portfolio_git">
-                
-            </div>
+            <div class="portfolio_git"></div>
 
         </div>
     </section>
@@ -414,6 +436,30 @@
 </div>
 <!-- end wrap -->
 
+	<script type="text/tmpl" id='js-work'>
+        <% for(i = 0; i < img.length; i++) { %> 
+            <article class="portfolio_descr">
+                <a href="<%- img[i].link %>" class="portfolio_link" target="_blank">
+                    <div class="portfolio_info">
+                        <div class="portfolio_sub_info">
+                            <div class="portfolio_sub_info2">
+                                <h3 class="portfolio_sub_info_title"><%- img[i].title %></h3>
+                                <ul class="portfolio_sub_info_list">
+                                    <% for(j = 0; j < img[i].skills.length; j++) { %>
+                                        <li class="portfolio_sub_info_item"><%- img[i].skills[j].name %><li>
+                                    <% }; %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="portfolio_figure">
+                        <img class="portfolio_figure_img" src="<%- img[i].picture %>" />
+                    </figure>
+                </a>
+            </article>
+        <% }; %>
+    </script>
+
     <script type="text/tmpl" id='js-img'>
         <% for(i = 0; i < img.length; i++) { %> 
             <article class="portfolio_descr">
@@ -465,6 +511,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
 <script src="js/index.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>
